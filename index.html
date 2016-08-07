@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>PaintJS</title>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="jscolor-2.0.4/jscolor.js"></script>
 </head>
@@ -12,39 +13,43 @@
 <body>
     <div class="wrapper">
         <div id="canvas-container">
-            <canvas id="canvas" width="800px" height="600px"></canvas>
+                <label id="header_text">Team 'Demeter' Paint Project</label>
+                <canvas id="canvas" class="canvas" width="800px" height="600px"></canvas>
+                <canvas id="tempcanvas" class="canvas" width="800px" height="600px"></canvas>
         </div>
         <aside id="tools-container">
             <div class="colors" role="group">
-                <b>Colors</b>
+                <label id="Colorlabel" class="tools_words">Colors</label>
                 <br />
-                <button id="color-black" class="custom-button"></button>
-                <button id="color-white" class="custom-button"></button>
-                <button id="color-gray" class="custom-button"></button>
-                <button id="color-red" class="custom-button"></button>
-                <button id="color-blue" class="custom-button"></button>
-                <button id="color-orange" class="custom-button"></button>
-                <button id="color-yellow" class="custom-button"></button>
-                <button id="color-green" class="custom-button"></button>
-                <button id="color-purple" class="custom-button"></button>
-                <button id="color-pink" class="custom-button"></button>
-                <button id="color-picker" class="jscolor"></button>
+                <button id="black" class="color-button" onClick="setColor(this.id)" title="Black"></button>
+                <button id="white" class="color-button" onClick="setColor(this.id)" title="White"></button>
+                <button id="gray" class="color-button" onClick="setColor(this.id)" title="Gray"></button>
+                <button id="red" class="color-button" onClick="setColor(this.id)" title="Red"></button>
+                <button id="blue" class="color-button" onClick="setColor(this.id)" title="Blue"></button>
+                <button id="orange" class="color-button" onClick="setColor(this.id)" title="Orange"></button>
+                <button id="yellow" class="color-button" onClick="setColor(this.id)" title="Yellow"></button>
+                <button id="green" class="color-button" onClick="setColor(this.id)" title="Green"></button>
+                <button id="purple" class="color-button" onClick="setColor(this.id)" title="Purple"></button>
+                <button id="pink" class="color-button" onClick="setColor(this.id)" title="Pink"></button>
+                <span id="pickColorLabel">Pick your color!</span>
+                <span id="hashTag">#</span>
+                <input type="text" id="color-picker" class="jscolor" title="Click to open Color-Picker">
+            
             </div>
             <div class="tools">
-                <b>Tools</b>
-                <br />
-                <button id="pencil" class="custom-button"></button>
-                <button id="eraser" class="custom-button"></button>
-                <button id="paint" class="custom-button"></button>
-                <button id="brush" class="custom-button"></button>
+                <label id="Toolslabel" class="tools_words">Tools</label>
+                <button id="pencil" class="custom-button" title="Pencil"></span></button>
+                <button id="eraser" class="custom-button" title="Eraser"></button>
+                <button id="paint" class="custom-button" title="Paint"></button>
+                <button id="brush" class="custom-button" title="Brush"></button>
             </div>
             <div class="shapes">
-                <b>Shapes</b>
+                <label id="Shapeslabel" class="tools_words">Shapes</label>
                 <br />
-                <button id="triangle" class="custom-button"></button>
-                <button id="circle" class="custom-button"></button>
-                <button id="square" class="custom-button"></button>
-                <button id="rectangle" class="custom-button"></button>
+                <button id="triangle" class="custom-button" title="Triangle"></button>
+                <button id="circle" class="custom-button" title="Circle"></button>
+                <button id="square" class="custom-button" title="Square"></button>
+                <button id="rectangle" class="custom-button" title="Rectangle"></button>
             </div>
         </aside>
     </div>
